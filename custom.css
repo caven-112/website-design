@@ -12,11 +12,11 @@ body.dark-theme {
 }
 
 #button-list.default-theme {
-    background-color: var(--color-secondary-black);
+    background-color: var(--color-secondary-white);
     color: var(--color-primary-white);
 }
 
 #button-list.dark-theme {
-    background-color: var(--color-secondary-cyan);
+    background-color: var(--color-secondary-black);
     color: var(--color-primary-white);
 }

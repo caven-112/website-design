@@ -80,18 +80,20 @@
 
     <body class="transition">
         <div id="button-list">
-            <button data-page="profile-page">Profile</button>
-            <button data-page="social-media-page">Social Media</button>
-            <button data-page="setting-page">Setting</button>
+            <ul id="navid">
+                <li><button data-page="profile-page">Profile</button></li>
+                <li><button data-page="social-media-page">Social Media</button></li>
+                <li><button data-page="setting-page">Setting</button></li>
+            </ul>
         </div>
         
 
-        <!--Login Page-->
+        <!--Profile Page-->
         <div id="profile-page">
             <h1>Profile Page</h1>
         </div>
 
-        <!--Profile Page-->
+        <!--Social Media Page-->
         <div id="social-media-page">
             <h1>Social Media Page</h1>
         </div>
@@ -99,7 +101,10 @@
         <!--Settings-->
         <div id="setting-page">
             <h1>Setting Page</h1>
-            <button id="change-theme">Toggle Theme</button>
+            <br>
+            <ul>
+                <li>Change Theme: <button id="change-theme">Toggle Theme</button></li>
+            </ul>
         </div>
     </body>
 </html>

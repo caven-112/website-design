@@ -1,7 +1,43 @@
 
 #button-list {
-    width: 100%;
-    height: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
-    border: black solid 1px;
+    width: 100%;
+    min-height: 5vh;
+    padding: 10px;
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+#navid {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+
+    list-style: none;
+}
+
+#navid li button {
+    padding: 0.35rem 0.8rem;
+    font-size: 1.75rem;
+    border-radius: 1.35rem;
+    min-width: 15rem;
+    max-width: 20rem;
+}
+
+#setting-page li button {
+    font-size: 2.25rem;
+    border-radius: 1.35rem;
+    min-width: 15rem;
+    max-width: 20rem;
+
+    list-style: none;
 }
