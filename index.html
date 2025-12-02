@@ -12,18 +12,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
     
-        document.body.classList.add('default-theme');
-        showPage('profile-page')
-        const buttonList = document.querySelector('#button-list');
+            document.body.classList.add('default-theme');
+            showPage('profile-page')
+            const buttonList = document.querySelector('#button-list');
 
 
-        if (buttonList) {
-            buttonList.classList.add('default-theme');
-        }
+            if (buttonList) {
+                buttonList.classList.add('default-theme');
+            }
 
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', handleButtonClick);
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', handleButtonClick);
             });
+
+            document.getElementById('change-user-btn').addEventListener('click', changeUser);
         });
 
 
@@ -57,7 +59,23 @@
         }
 
 
+        function changeUser() {
+            const userInput = document.getElementById('select-profile').value;
+            const validUsers = ['user-profile-1', 'user-profile-2', 'user-profile-3', 'user-profile-4', 'user-profile-5'];
+            const errorMessage = document.getElementById('profile-error-message');
 
+            if (validUsers.includes(userInput)) {
+                errorMessage.style.display = 'none';
+                updateProfile(userInput);
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function updateProfile(profile) {
+            document.getElementById('profile-page').innerHTML = `<h1>${profile}'s Profile Page</h1>`;
+            document.getElementById('social-media-page').innerHTML = `<h1>${profile}'s Social Media Page</h1>`;
+        }
 
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
@@ -72,10 +90,8 @@
             document.querySelectorAll('#button-list button, #setting-page button').forEach(button => {
                 button.classList.toggle('dark-theme');
                 button.classList.toggle('default-theme');
-        });
-}
-
-
+            });
+        }
     </script>
 
     <body class="transition">
@@ -104,6 +120,18 @@
             <br>
             <ul>
                 <li>Change Theme: <button id="change-theme">Toggle Theme</button></li>
+                <li>Change User:
+                    <input id="select-profile" name="profile" list="profiles" placeholder="Select or type a profile">
+                        <datalist id="profiles">
+                            <option value="user-profile-1">
+                            <option value="user-profile-2">
+                            <option value="user-profile-3">
+                            <option value="user-profile-4">
+                            <option value="user-profile-5">
+                        </datalist>
+                        <button id="change-user-btn">Change User</button>
+                        <p id="profile-error-message">ERROR: User doesn't exist!</p>
+                </li>
             </ul>
         </div>
     </body>

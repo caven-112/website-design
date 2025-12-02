@@ -41,3 +41,18 @@
 
     list-style: none;
 }
+
+#profile-error-message {
+    min-width: 25rem;
+    max-width: 35rem;
+    min-height: 2vh;
+    background-color: var(--color-error-messages);
+    color: var(--color-primary-black);
+
+    
+    font-size: 1.75rem;
+    padding-left: 2rem;
+    margin: 0;
+
+    display: none;
+}
