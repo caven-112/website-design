@@ -1,0 +1,15 @@
+:root {
+    
+    --color-primary-white: #DDEFF3;
+    --color-primary-black: #252525;
+
+    --color-cyan-light: #51B3D5;
+}
+
+.transition {
+    transition: background 0.2s, color 0.2s;
+}
+
+.ft-bold {
+    font-weight:bold;
+}

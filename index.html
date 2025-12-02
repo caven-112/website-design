@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <title>Profile</title>
+    </head>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="custom.css">
+
+    <script>
+        function showPage(page) {
+
+            document.querySelectorAll('div').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            document.querySelector(`#${page}`).style.display = 'block';
+        }
+
+
+
+
+
+        function toggleTheme() {
+            const body = document.body;
+
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('default-theme');
+        }
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.body.classList.add('default-theme');
+
+            document.querySelectorAll('button').forEach(button => {
+                button.onclick = function() {
+                    page = button.getAttribute('data-page');
+
+                    if (page) {
+                        showPage(page);
+                    }
+                    else {
+                        toggleTheme();
+                    }
+                }
+            });
+        });
+
+
+    </script>
+
+    <body class="transition">
+        <button data-page="login-page">Login</button>
+        <button data-page="profile-page">Profile</button>
+        <button>Theme</button>
+
+        <!--Login-->
+        <div id="login-page" style="display: none;">
+            <h1>Login Page</h1>
+        </div>
+
+        <!--Profile-->
+        <div id="profile-page" style="display: none;">
+            <h1>Profile Page</h1>
+        </div>
+
+        <!--Theme-->
+        <div id="theme-page" style="display: none;">
+            <h1>Theme Button</h1>
+        </div>
+    </body>
+</html>

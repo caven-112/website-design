@@ -1,0 +1,12 @@
+
+
+
+body.default-theme {
+    background-color: var(--color-primary-white);
+    color: var(--color-primary-black);
+}
+
+body.dark-theme {
+    background-color: var(--color-primary-black);
+    color: var(--color-primary-white);
+}
