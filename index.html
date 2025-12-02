@@ -2,75 +2,104 @@
 
 <html>
     <head>
-       <title>Profile</title>
+        <title>Profile</title>
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="components.css">
+        <link rel="stylesheet" href="custom.css">
     </head>
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="components.css">
-    <link rel="stylesheet" href="custom.css">
+    
 
     <script>
-        function showPage(page) {
+        document.addEventListener('DOMContentLoaded', () => {
+    
+        document.body.classList.add('default-theme');
+        showPage('profile-page')
+        const buttonList = document.querySelector('#button-list');
 
-            document.querySelectorAll('div').forEach(div => {
-                div.style.display = 'none';
-            });
 
-            document.querySelector(`#${page}`).style.display = 'block';
+        if (buttonList) {
+            buttonList.classList.add('default-theme');
         }
 
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+            });
+        });
+
+
+
+
+        function handleButtonClick(event) {
+            const button = event.target;
+            const page = button.getAttribute('data-page');
+            const theme = document.querySelector('#change-theme');
+
+            if (page) {
+                showPage(page);
+            };
+
+            if (button.id === 'change-theme') {
+                toggleTheme();
+            }
+        }
+
+
+        function showPage(pageId) {
+            const divs = document.querySelectorAll('div[id]:not(#button-list)');
+    
+            divs.forEach(div => div.style.display = 'none');
+    
+            const page = document.querySelector(`#${pageId}`);
+
+            if (page) {
+                page.style.display = 'block';
+            }
+        }
 
 
 
 
         function toggleTheme() {
-            const body = document.body;
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('default-theme');
 
-            body.classList.toggle('dark-theme');
-            body.classList.toggle('default-theme');
-        }
+            const buttonList = document.querySelector('#button-list');
+            if (buttonList) {
+                buttonList.classList.toggle('dark-theme');
+                buttonList.classList.toggle('default-theme');
+            }
 
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-
-            document.body.classList.add('default-theme');
-
-            document.querySelectorAll('button').forEach(button => {
-                button.onclick = function() {
-                    page = button.getAttribute('data-page');
-
-                    if (page) {
-                        showPage(page);
-                    }
-                    else {
-                        toggleTheme();
-                    }
-                }
-            });
+            document.querySelectorAll('#button-list button, #setting-page button').forEach(button => {
+                button.classList.toggle('dark-theme');
+                button.classList.toggle('default-theme');
         });
+}
 
 
     </script>
 
     <body class="transition">
-        <button data-page="login-page">Login</button>
-        <button data-page="profile-page">Profile</button>
-        <button>Theme</button>
-
-        <!--Login-->
-        <div id="login-page" style="display: none;">
-            <h1>Login Page</h1>
+        <div id="button-list">
+            <button data-page="profile-page">Profile</button>
+            <button data-page="social-media-page">Social Media</button>
+            <button data-page="setting-page">Setting</button>
         </div>
+        
 
-        <!--Profile-->
-        <div id="profile-page" style="display: none;">
+        <!--Login Page-->
+        <div id="profile-page">
             <h1>Profile Page</h1>
         </div>
 
-        <!--Theme-->
-        <div id="theme-page" style="display: none;">
-            <h1>Theme Button</h1>
+        <!--Profile Page-->
+        <div id="social-media-page">
+            <h1>Social Media Page</h1>
+        </div>
+
+        <!--Settings-->
+        <div id="setting-page">
+            <h1>Setting Page</h1>
+            <button id="change-theme">Toggle Theme</button>
         </div>
     </body>
 </html>

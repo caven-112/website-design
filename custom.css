@@ -10,3 +10,13 @@ body.dark-theme {
     background-color: var(--color-primary-black);
     color: var(--color-primary-white);
 }
+
+#button-list.default-theme {
+    background-color: var(--color-secondary-black);
+    color: var(--color-primary-white);
+}
+
+#button-list.dark-theme {
+    background-color: var(--color-secondary-cyan);
+    color: var(--color-primary-white);
+}
