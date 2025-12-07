@@ -73,8 +73,8 @@
         }
 
         function updateProfile(profile) {
-            document.getElementById('profile-page').innerHTML = `<h1>${profile}'s Profile Page</h1>`;
-            document.getElementById('social-media-page').innerHTML = `<h1>${profile}'s Social Media Page</h1>`;
+            document.getElementById('profile-page').innerHTML = `<h2>${profile}'s Profile Page</h2>`;
+            document.getElementById('social-media-page').innerHTML = `<h2>${profile}'s Social Media Page</h2>`;
         }
 
         function toggleTheme() {
@@ -106,7 +106,17 @@
 
         <!--Profile Page-->
         <div id="profile-page">
-            <h1>Profile Page</h1>
+
+            <div class="profile-author-bio">
+
+                <div class="profile-author-picture"></div>
+
+                <div class="profile-author-information">
+                    <h2 class="profile-author-name">Benito Juarez</h2>
+
+                    <div class="profile-author-description"> My name is Benito Juarez, i'm born from Mexico. I fight for freedom of my people</div>
+                </div>
+            </div>
         </div>
 
         <!--Social Media Page-->
