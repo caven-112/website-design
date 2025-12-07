@@ -1,9 +1,8 @@
 
 #button-list {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 
     width: 100%;
     min-height: 5vh;
@@ -11,6 +10,7 @@
     gap: 10px;
 
     box-sizing: border-box;
+    display: flex;
 }
 
 #navid {
@@ -33,26 +33,34 @@
     max-width: 20rem;
 }
 
-#setting-page li button {
-    font-size: 2.25rem;
-    border-radius: 1.35rem;
-    min-width: 15rem;
-    max-width: 20rem;
+.body-setting-page div, h1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    list-style: none;
+    margin: 135px auto 65px;
+    display: flex;
+}
+
+.body-setting-page button, #trigger-profile-change, #profile-error-message {
+    border-radius: 45px 45px 45px 45px;
+    max-width: 70%;
+    min-width: 30%;
+    max-height: none;
+
+    font-size: 1.65rem;
+
+    margin: 0;
+    padding: 0.35rem 0.8rem;
 }
 
 #profile-error-message {
-    min-width: 25rem;
-    max-width: 35rem;
-    min-height: 2vh;
+    border: none;
     background-color: var(--color-error-messages);
     color: var(--color-primary-black);
 
-    
-    font-size: 1.75rem;
-    padding-left: 2rem;
-    margin: 0;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
 
     display: none;
 }
@@ -68,7 +76,7 @@
 }
 
 .profile-author-bio {
-    border-top: none;
+    border: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -107,5 +115,4 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.65rem;
 
-    filter: brightness(0.85);
 }

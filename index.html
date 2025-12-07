@@ -13,7 +13,7 @@
         document.addEventListener('DOMContentLoaded', () => {
     
             document.body.classList.add('default-theme');
-            showPage('profile-page')
+            showPage('body-profile-page')
             const buttonList = document.querySelector('#button-list');
 
 
@@ -34,13 +34,13 @@
         function handleButtonClick(event) {
             const button = event.target;
             const page = button.getAttribute('data-page');
-            const theme = document.querySelector('#change-theme');
+            const theme = document.querySelector('#trigger-theme-change');
 
             if (page) {
                 showPage(page);
             };
 
-            if (button.id === 'change-theme') {
+            if (button.id === 'trigger-theme-change') {
                 toggleTheme();
             }
         }
@@ -60,7 +60,7 @@
 
 
         function changeUser() {
-            const userInput = document.getElementById('select-profile').value;
+            const userInput = document.getElementById('trigger-profile-change').value;
             const validUsers = ['user-profile-1', 'user-profile-2', 'user-profile-3', 'user-profile-4', 'user-profile-5'];
             const errorMessage = document.getElementById('profile-error-message');
 
@@ -73,8 +73,8 @@
         }
 
         function updateProfile(profile) {
-            document.getElementById('profile-page').innerHTML = `<h2>${profile}'s Profile Page</h2>`;
-            document.getElementById('social-media-page').innerHTML = `<h2>${profile}'s Social Media Page</h2>`;
+            document.getElementById('body-profile-page').innerHTML = `<h2>${profile}'s Profile Page</h2>`;
+            document.getElementById('body-media-page').innerHTML = `<h2>${profile}'s Social Media Page</h2>`;
         }
 
         function toggleTheme() {
@@ -87,7 +87,7 @@
                 buttonList.classList.toggle('default-theme');
             }
 
-            document.querySelectorAll('#button-list button, #setting-page button').forEach(button => {
+            document.querySelectorAll('#button-list button, .body-setting-page button').forEach(button => {
                 button.classList.toggle('dark-theme');
                 button.classList.toggle('default-theme');
             });
@@ -97,15 +97,15 @@
     <body class="transition">
         <div id="button-list">
             <ul id="navid">
-                <li><button data-page="profile-page">Profile</button></li>
-                <li><button data-page="social-media-page">Social Media</button></li>
-                <li><button data-page="setting-page">Setting</button></li>
+                <li><button data-page="body-profile-page">Profile</button></li>
+                <li><button data-page="body-media-page">Social Media</button></li>
+                <li><button data-page="body-setting-page">Setting</button></li>
             </ul>
         </div>
         
 
         <!--Profile Page-->
-        <div id="profile-page">
+        <div id="body-profile-page">
 
             <div class="profile-author-bio">
 
@@ -114,24 +114,34 @@
                 <div class="profile-author-information">
                     <h2 class="profile-author-name">Benito Juarez</h2>
 
-                    <div class="profile-author-description"> My name is Benito Juarez, i'm born from Mexico. I fight for freedom of my people</div>
+                    <div class="profile-author-description"> 
+                        <p>My name is Benito Juarez, i'm born from Mexico. I fight for freedom of my people</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!--Social Media Page-->
-        <div id="social-media-page">
+        <div id="body-media-page">
             <h1>Social Media Page</h1>
         </div>
 
         <!--Settings-->
-        <div id="setting-page">
+        <div class="body-setting-page">
             <h1>Setting Page</h1>
-            <br>
-            <ul>
-                <li>Change Theme: <button id="change-theme">Toggle Theme</button></li>
-                <li>Change User:
-                    <input id="select-profile" name="profile" list="profiles" placeholder="Select or type a profile">
+
+
+            
+            <div>
+                <h2>Change Theme</h2>
+                <button id="trigger-theme-change">Toggle Theme</button>
+            </div>
+
+
+
+            <div class="setting-button-list">
+                <h2>Change Profile</h2>
+                <input id="trigger-profile-change" name="profile" list="profiles" placeholder="Select or type a profile">
                         <datalist id="profiles">
                             <option value="user-profile-1">
                             <option value="user-profile-2">
@@ -140,9 +150,8 @@
                             <option value="user-profile-5">
                         </datalist>
                         <button id="change-user-btn">Change User</button>
-                        <p id="profile-error-message">ERROR: User doesn't exist!</p>
-                </li>
-            </ul>
+                        <p id="profile-error-message">Error: User doesn't exist!</p>
+            </div>
         </div>
     </body>
 </html>
