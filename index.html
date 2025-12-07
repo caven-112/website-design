@@ -59,13 +59,13 @@
 
 
         function showPage(pageId) {
-            
+
             const divs = document.querySelectorAll('#main-content > div');
             divs.forEach(div => div.style.display = 'none');
 
             const page = document.getElementById(pageId);
             if (page) page.style.display = 'block';
-            }
+        }
 
 
 
@@ -126,13 +126,10 @@
         <div id="main-landing-page">
             <div id="landing-page-image">
                 <div id="landing-page-title">
-                    Talking Shit
+                    Project
                 </div>
                 <div class="landing-page-message">
-                    Hey Jude topped the charts in Britain for two weeks and for 9 weeks in America. where it became The Beatles longest-running No.1 in the US singles chart as well as the single with the longest running time.  
-The Beatles did not record their promotional film until Hey Jude had been on sale in America for a week. They returned to Twickenham Film Studio. using director Michael Lindsay-Hogg who had worked with them on Paperback Writer and Rain. Earlier still, Lindsay-Hogg had directed episodes of Ready Steady Go! And a few months after the film for Hey Jude he made The Rolling Stones Rock and Roll Circus TV special that featured John and Yoko but wouldnt be shown until 1996
-To help with the filming an audience of around 300 local people as well as some of the fans that gathered regularly outside Abbey Road Studios were brought in for the songs finale. Their presence had an unlikely upside for The Beatles in their long-running saga with the Musicians Union in that the MU were fooled into believing the band were playing live. when in fact they were miming for the vast majority of the song. Paul, however sang live throughout the song.
-The video was first broadcast on David Frosts Frost On Sunday show four days after it was filmed. At that point transmission was in black and white although the promo was originally shot in colour. It was first aired in America a month later on 6 October 1968. on The Smotheres Brothers Comedy Hour. 
+                    ...
                 </div>
                 <div class="land-page-message"><button id="trigger-enter-site">Enter Site</button></div>
             </div>
@@ -141,50 +138,74 @@ The video was first broadcast on David Frosts Frost On Sunday show four days aft
             <!--Profile Page-->
             <div id="body-profile-page">
 
-                <div data-username="Worcester" class="profile-author-bio profile-picture author1">
+                <div data-username="Grabador" class="profile-author-bio profile-picture author1">
                     <div class="profile-picture-style"></div>
 
                     <div class="profile-author-information">
-                        <h2 class="profile-author-name">Dean Conant Worcester</h2>
+                        <h2 class="profile-author-name">John Rich N. Grabador</h2>
 
                         <div class="profile-author-description"> 
-                            <p>I am here.</p>
+                            <h2>About Me</h2>
+                            <p>I am a 2nd year college student currently studying at Bestlink College of the Philippines.</p>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div data-username="Moses" class="profile-author-bio profile-picture author2">
+                <div data-username="Placeholder2" class="profile-author-bio profile-picture default">
                     <div class="profile-picture-style"></div>
                     
                     <div class="profile-author-information">
-                        <h2 class="profile-author-name">Bernard Moses</h2>
+                        <h2 class="profile-author-name">...</h2>
 
                         <div class="profile-author-description"> 
-                            <p>I am here</p>
+                            <h2>About Me</h2>
+                            <p>I am a 2nd year college student currently studying at Bestlink College of the Philippines.</p>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div data-username="Tavera" class="profile-author-bio profile-picture author3">
+                <div data-username="Placeholder3" class="profile-author-bio profile-picture default">
                     <div class="profile-picture-style"></div>
                     
                     <div class="profile-author-information">
-                        <h2 class="profile-author-name">Trinidad Pardo de Tavera</h2>
+                        <h2 class="profile-author-name">...</h2>
 
                         <div class="profile-author-description"> 
-                            <p>I am here</p>
+                            <h2>About Me</h2>
+                            <p>I am a 2nd year college student currently studying at Bestlink College of the Philippines.</p>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div data-username="Ide" class="profile-author-bio profile-picture author4">
+                <div data-username="Placeholder4" class="profile-author-bio profile-picture default">
                     <div class="profile-picture-style"></div>
                     
                     <div class="profile-author-information">
-                        <h2 class="profile-author-name">Henry Clay Ide</h2>
+                        <h2 class="profile-author-name">...</h2>
 
                         <div class="profile-author-description"> 
-                            <p>I am here</p>
+                            <h2>About Me</h2>
+                            <p>I am a 2nd year college student currently studying at Bestlink College of the Philippines.</p>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -211,10 +232,10 @@ The video was first broadcast on David Frosts Frost On Sunday show four days aft
                     <h2>Change Profile</h2>
                     <input id="trigger-profile-change" name="profile" list="profiles" placeholder="Select or type your Username">
                             <datalist id="profiles">
-                                <option value="Worcester">
-                                <option value="Moses">
-                                <option value="Tavera">
-                                <option value="Ide">
+                                <option value="Grabador">
+                                <option value="Placeholder2">
+                                <option value="Placeholder3">
+                                <option value="Placeholder4">
                             </datalist>
                             <button id="change-user-btn">Change User</button>
                             <div id="profile-error-message">Error: User doesn't exist!</div>

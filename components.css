@@ -150,7 +150,7 @@
     text-decoration-skip-ink: none;
 }
 
-.profile-author-description {
+.profile-author-description h2, p, ul {
     font-style: normal;
     font-weight: lighter;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
