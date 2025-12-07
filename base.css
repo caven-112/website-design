@@ -6,6 +6,12 @@
     --color-secondary-white: #383A3A;
     --color-secondary-black: #51B3D5;
     --color-error-messages: #ffcccc;
+
+    --image-profile-default: url(profile-images/default_profile.png);
+    --image-profile-author1: url(profile-images/A.jpg);
+    --image-profile-author2: url(profile-images/B.jpg);
+    --image-profile-author3: url(profile-images/C.jpg);
+    --image-profile-author4: url(profile-images/D.jpg);
 }
 
 button:hover {

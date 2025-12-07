@@ -33,7 +33,7 @@
     max-width: 20rem;
 }
 
-.body-setting-page div, h1 {
+#body-setting-page div, h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@
     display: flex;
 }
 
-.body-setting-page button, #trigger-profile-change, #profile-error-message {
+#body-setting-page button, #trigger-profile-change, #profile-error-message {
     border-radius: 45px 45px 45px 45px;
     max-width: 70%;
     min-width: 30%;
@@ -61,12 +61,9 @@
 
     margin-top: 0.5rem;
     margin-left: 2rem;
-
-    display: none;
 }
 
-.profile-author-picture {
-    background-image: url(profile-images/B.jpg);
+.profile-picture-style {
     background-position: 50% 0;
     background-size: cover;
 

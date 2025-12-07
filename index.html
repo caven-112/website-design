@@ -13,7 +13,6 @@
         document.addEventListener('DOMContentLoaded', () => {
     
             document.body.classList.add('default-theme');
-            showPage('body-profile-page')
             const buttonList = document.querySelector('#button-list');
 
 
@@ -60,22 +59,31 @@
 
 
         function changeUser() {
-            const userInput = document.getElementById('trigger-profile-change').value;
-            const validUsers = ['user-profile-1', 'user-profile-2', 'user-profile-3', 'user-profile-4', 'user-profile-5'];
+            const userInput = document.getElementById('trigger-profile-change').value.trim();
             const errorMessage = document.getElementById('profile-error-message');
+            const profiles = document.querySelectorAll('.profile-author-bio');        
 
-            if (validUsers.includes(userInput)) {
-                errorMessage.style.display = 'none';
-                updateProfile(userInput);
-            } else {
+            let found = false;
+
+            profiles.forEach(profile => {
+                const username = profile.getAttribute("data-username");
+
+                if (username.toLowerCase() === userInput.toLowerCase()) {
+                    profile.style.display = 'flex';
+                    found = true;
+                } else {
+                    profile.style.display = 'none';
+                }
+            });
+
+            if (!found) {
                 errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
             }
         }
 
-        function updateProfile(profile) {
-            document.getElementById('body-profile-page').innerHTML = `<h2>${profile}'s Profile Page</h2>`;
-            document.getElementById('body-media-page').innerHTML = `<h2>${profile}'s Social Media Page</h2>`;
-        }
+
 
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
@@ -98,7 +106,7 @@
         <div id="button-list">
             <ul id="navid">
                 <li><button data-page="body-profile-page">Profile</button></li>
-                <li><button data-page="body-media-page">Social Media</button></li>
+                <li><button data-page="body-media-page">Media Account</button></li>
                 <li><button data-page="body-setting-page">Setting</button></li>
             </ul>
         </div>
@@ -107,15 +115,50 @@
         <!--Profile Page-->
         <div id="body-profile-page">
 
-            <div class="profile-author-bio">
-
-                <div class="profile-author-picture"></div>
+            <div data-username="Worcester" class="profile-author-bio profile-picture author1">
+                <div class="profile-picture-style"></div>
 
                 <div class="profile-author-information">
-                    <h2 class="profile-author-name">Benito Juarez</h2>
+                    <h2 class="profile-author-name">Dean Conant Worcester</h2>
 
                     <div class="profile-author-description"> 
-                        <p>My name is Benito Juarez, i'm born from Mexico. I fight for freedom of my people</p>
+                        <p>I am here.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-username="Moses" class="profile-author-bio profile-picture author2">
+                <div class="profile-picture-style"></div>
+                
+                <div class="profile-author-information">
+                    <h2 class="profile-author-name">Bernard Moses</h2>
+
+                    <div class="profile-author-description"> 
+                        <p>I am here</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-username="Tavera" class="profile-author-bio profile-picture author3">
+                <div class="profile-picture-style"></div>
+                
+                <div class="profile-author-information">
+                    <h2 class="profile-author-name">Trinidad Pardo de Tavera</h2>
+
+                    <div class="profile-author-description"> 
+                        <p>I am here</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-username="Ide" class="profile-author-bio profile-picture author4">
+                <div class="profile-picture-style"></div>
+                
+                <div class="profile-author-information">
+                    <h2 class="profile-author-name">Henry Clay Ide</h2>
+
+                    <div class="profile-author-description"> 
+                        <p>I am here</p>
                     </div>
                 </div>
             </div>
@@ -123,34 +166,32 @@
 
         <!--Social Media Page-->
         <div id="body-media-page">
-            <h1>Social Media Page</h1>
+            <div>Media Page</div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <!--Settings-->
-        <div class="body-setting-page">
+        <div id="body-setting-page">
             <h1>Setting Page</h1>
 
-
-            
             <div>
                 <h2>Change Theme</h2>
                 <button id="trigger-theme-change">Toggle Theme</button>
             </div>
 
-
-
             <div class="setting-button-list">
                 <h2>Change Profile</h2>
-                <input id="trigger-profile-change" name="profile" list="profiles" placeholder="Select or type a profile">
+                <input id="trigger-profile-change" name="profile" list="profiles" placeholder="Select or type your Username">
                         <datalist id="profiles">
-                            <option value="user-profile-1">
-                            <option value="user-profile-2">
-                            <option value="user-profile-3">
-                            <option value="user-profile-4">
-                            <option value="user-profile-5">
+                            <option value="Worcester">
+                            <option value="Moses">
+                            <option value="Tavera">
+                            <option value="Ide">
                         </datalist>
                         <button id="change-user-btn">Change User</button>
-                        <p id="profile-error-message">Error: User doesn't exist!</p>
+                        <div id="profile-error-message">Error: User doesn't exist!</div>
             </div>
         </div>
     </body>

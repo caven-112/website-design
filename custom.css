@@ -20,3 +20,23 @@ body.dark-theme {
     background-color: var(--color-secondary-black);
     color: var(--color-primary-white);
 }
+
+.profile-picture.default .profile-picture-style {
+    background-image: var(--image-profile-default);
+}
+
+.profile-picture.author1 .profile-picture-style {
+    background-image: var(--image-profile-author1);
+}
+
+.profile-picture.author2 .profile-picture-style {
+    background-image: var(--image-profile-author2);
+}
+
+.profile-picture.author3 .profile-picture-style {
+    background-image: var(--image-profile-author3);
+}
+
+.profile-picture.author4 .profile-picture-style {
+    background-image: var(--image-profile-author4);
+}
