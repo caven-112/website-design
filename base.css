@@ -7,11 +7,13 @@
     --color-secondary-black: #51B3D5;
     --color-error-messages: #ffcccc;
 
-    --image-profile-default: url(profile-images/default_profile.png);
-    --image-profile-author1: url(profile-images/A.jpg);
-    --image-profile-author2: url(profile-images/B.jpg);
-    --image-profile-author3: url(profile-images/C.jpg);
-    --image-profile-author4: url(profile-images/D.jpg);
+    --image-profile-default: url(images/default_profile.png);
+    --image-profile-author1: url(images/A.jpg);
+    --image-profile-author2: url(images/B.jpg);
+    --image-profile-author3: url(images/C.jpg);
+    --image-profile-author4: url(images/D.jpg);
+
+    --image-landing-page-default: url(images/landing_page.jpg);
 }
 
 button:hover {
@@ -37,7 +39,7 @@ div {
     font-size: 2.5rem;
 }
 
-.profile-author-description p {
+.profile-author-description p, #landing-page-message{
     filter: brightness(0.95);
 }
 
